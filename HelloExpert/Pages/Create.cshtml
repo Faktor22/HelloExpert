@@ -1,0 +1,64 @@
+﻿@page
+@model HelloExpert.Pages.CreateModel
+@{
+}
+
+
+
+<div class="sub-page mt-4">
+    <h1>Nieuw Expert</h1>
+
+    @if (Model.errorMessage.Length > 0)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>@Model.errorMessage</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+
+    <form method="POST">
+        <div class="col-12">
+            <lable class="col-sm-3 col-form-label">Naam</lable>
+            <input type="text" class="form-control" name="name" value="@Model.expertInfo.name">
+        </div>
+        
+        <div class="col-12">
+        <lable class="col-sm-3 col-form-label">E-mailadres</lable>
+            <input type="text" class="form-control" name="email" value="@Model.expertInfo.email">
+        </div>
+
+        <div class="col-12">
+        <lable class="col-sm-3 col-form-label">Telefoon</lable>
+            <input type="text" class="form-control" name="phone" value="@Model.expertInfo.phone">
+        </div>
+
+        <div class="col-12">
+        <lable class="col-sm-3 col-form-label">Expertise</lable>
+            <input type="text" class="form-control" name="tag" value="@Model.expertInfo.tag">
+        </div>
+
+
+
+        @if (Model.successMessage.Length > 0)
+        {
+            <div class="row mb-3">
+                <div class="col-sm-9">
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>@Model.successMessage</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div class="row mb-6 mt-4">
+            <div class="col-sm-6 d-grid">
+                <button type="submit" class="btn btn-primary">Toevoegen</button>
+            </div>
+            <div class="col-sm-6 d-grid">
+                <a class="btn btn-outline-dark" href="/" role="button">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>

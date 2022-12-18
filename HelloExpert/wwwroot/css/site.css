@@ -1,0 +1,55 @@
+html {
+  font-size: 14px;
+}
+
+.bg-dark {
+    background-color: #1D2027 !important;
+}
+
+a.nav-link.text-white.active {
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+a.nav-link.text-white {
+    margin: 0 5px;
+}
+
+@media (min-width: 768px) {
+    html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.card-deck {
+    display: flex;
+    gap: 1rem;
+    margin: 4vh 0;
+    flex-wrap: wrap;
+}
+
+.sub-page {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.card-deck .card {
+    flex: 0 0 24%;
+}
+
+
+
+@media (max-width: 800px) {
+    .card-deck {
+        flex-direction: column;
+    }
+}

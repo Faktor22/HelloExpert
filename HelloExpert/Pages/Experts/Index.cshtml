@@ -1,0 +1,28 @@
+﻿@page
+@model HelloExpert.Pages.Experts.IndexModel
+@{
+}
+
+<br>
+<a class="btn btn-primary btn-sm float-end" href="/Experts/Create">Nieuw Expert</a>
+<h1>Experts</h1>
+
+    
+<div class="card-deck">
+    @foreach (var item in Model.listExperts)
+    {
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">@item.name</h5>
+                <p class="card-text">@item.email</p>
+                <p class="card-text"><small class="text-muted"><strong>Expertise:</strong> @item.tag</small></p>
+                <div class="card-footer">
+                    <small class="text-muted">ID: @item.id | @item.created_at</small>
+                </div>
+                <br />
+                <a class="btn btn-warning btn-sm" href="/Experts/Edit?id=@item.id">Edit</a>
+                <a class="btn btn-danger btn-sm" href="/Experts/Delete?id=@item.id">Verwijder</a>
+            </div>
+        </div>
+     }
+</div>
